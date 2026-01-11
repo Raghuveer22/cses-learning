@@ -1,0 +1,75 @@
+#include <iostream>
+#include <iomanip>
+#include <fstream>
+#include <sstream>
+#include <string>
+#include <vector>
+#include <array>
+#include <list>
+#include <deque>
+#include <queue>
+#include <stack>
+#include <map>
+#include <unordered_map>
+#include <set>
+#include <unordered_set>
+#include <algorithm>
+#include <functional>
+#include <numeric>
+#include <cmath>
+#include <cstdlib>
+#include <ctime>
+#include <cassert>
+#include <climits>
+#include <cfloat>
+#include <cctype>
+#include <cstdio>
+#include <cstring>
+#include <bitset>
+#include <iterator>
+#include <utility>
+#include <typeinfo>
+#include <exception>
+#include <stdexcept>
+#include <memory>
+#include <random>
+#include <chrono>
+using namespace std;
+
+// Problem link: https://cses.fi/problemset/task/1694
+// Time limit: 1.00 s
+// Memory limit: 512 MB
+// 
+// Consider a network consisting of n computers and m connections. Each connection specifies how fast a computer can send data to another computer.
+// Kotivalo wants to download some data from a server. What is the maximum speed he can do this, using the connections in the network?
+// Input
+// The first input line has two integers n and m: the number of computers and connections. The computers are numbered 1,2,...,n. Computer 1 is the server and computer n is Kotivalo's computer.
+// After this, there are m lines describing the connections. Each line has three integers a, b and c: computer a can send data to computer b at speed c.
+// Output
+// Print one integer: the maximum speed Kotivalo can download data.
+// Constraints
+// 
+// 1 <= n <= 500
+// 1 <= m <= 1000
+// 1 <= a,b <= n
+// 1 <= c <= 10^9
+// 
+// Example
+// Input:
+// 4 5
+// 1 2 3
+// 2 4 2
+// 1 3 4
+// 3 4 5
+// 4 1 3
+// 
+// Output:
+// 6
+
+int main() {
+    cin.tie(nullptr);
+    ios::sync_with_stdio(false);    
+    
+	// Your code goes here
+	return 0;
+}

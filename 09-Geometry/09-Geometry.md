@@ -1,0 +1,18 @@
+# Geometry
+
+01. [Point Location Test](https://cses.fi/problemset/task/2189)
+02. [Line Segment Intersection](https://cses.fi/problemset/task/2190)
+03. [Polygon Area](https://cses.fi/problemset/task/2191)
+04. [Point in Polygon](https://cses.fi/problemset/task/2192)
+05. [Polygon Lattice Points](https://cses.fi/problemset/task/2193)
+06. [Minimum Euclidean Distance](https://cses.fi/problemset/task/2194)
+07. [Convex Hull](https://cses.fi/problemset/task/2195)
+08. [Maximum Manhattan Distances](https://cses.fi/problemset/task/3410)
+09. [All Manhattan Distances](https://cses.fi/problemset/task/3411)
+10. [Intersection Points](https://cses.fi/problemset/task/1740)
+11. [Line Segments Trace I](https://cses.fi/problemset/task/3427)
+12. [Line Segments Trace II](https://cses.fi/problemset/task/3428)
+13. [Lines and Queries I](https://cses.fi/problemset/task/3429)
+14. [Lines and Queries II](https://cses.fi/problemset/task/3430)
+15. [Area of Rectangles](https://cses.fi/problemset/task/1741)
+16. [Robot Path](https://cses.fi/problemset/task/1742)

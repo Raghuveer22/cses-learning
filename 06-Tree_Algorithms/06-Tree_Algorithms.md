@@ -1,0 +1,18 @@
+# Tree Algorithms
+
+01. [Subordinates](https://cses.fi/problemset/task/1674)
+02. [Tree Matching](https://cses.fi/problemset/task/1130)
+03. [Tree Diameter](https://cses.fi/problemset/task/1131)
+04. [Tree Distances I](https://cses.fi/problemset/task/1132)
+05. [Tree Distances II](https://cses.fi/problemset/task/1133)
+06. [Company Queries I](https://cses.fi/problemset/task/1687)
+07. [Company Queries II](https://cses.fi/problemset/task/1688)
+08. [Distance Queries](https://cses.fi/problemset/task/1135)
+09. [Counting Paths](https://cses.fi/problemset/task/1136)
+10. [Subtree Queries](https://cses.fi/problemset/task/1137)
+11. [Path Queries](https://cses.fi/problemset/task/1138)
+12. [Path Queries II](https://cses.fi/problemset/task/2134)
+13. [Distinct Colors](https://cses.fi/problemset/task/1139)
+14. [Finding a Centroid](https://cses.fi/problemset/task/2079)
+15. [Fixed-Length Paths I](https://cses.fi/problemset/task/2080)
+16. [Fixed-Length Paths II](https://cses.fi/problemset/task/2081)

@@ -1,0 +1,71 @@
+#include <iostream>
+#include <iomanip>
+#include <fstream>
+#include <sstream>
+#include <string>
+#include <vector>
+#include <array>
+#include <list>
+#include <deque>
+#include <queue>
+#include <stack>
+#include <map>
+#include <unordered_map>
+#include <set>
+#include <unordered_set>
+#include <algorithm>
+#include <functional>
+#include <numeric>
+#include <cmath>
+#include <cstdlib>
+#include <ctime>
+#include <cassert>
+#include <climits>
+#include <cfloat>
+#include <cctype>
+#include <cstdio>
+#include <cstring>
+#include <bitset>
+#include <iterator>
+#include <utility>
+#include <typeinfo>
+#include <exception>
+#include <stdexcept>
+#include <memory>
+#include <random>
+#include <chrono>
+using namespace std;
+
+// Problem link: https://cses.fi/problemset/task/1192
+// Time limit: 1.00 s
+// Memory limit: 512 MB
+// 
+// You are given a map of a building, and your task is to count the number of its rooms. The size of the map is n x m squares, and each square is either floor or wall. You can walk left, right, up, and down through the floor squares.
+// Input
+// The first input line has two integers n and m: the height and width of the map.
+// Then there are n lines of m characters describing the map. Each character is either . (floor) or # (wall).
+// Output
+// Print one integer: the number of rooms.
+// Constraints
+// 
+// 1 <= n,m <= 1000
+// 
+// Example
+// Input:
+// 5 8
+// ########
+// #..#...#
+// ####.#.#
+// #..#...#
+// ########
+// 
+// Output:
+// 3
+
+int main() {
+    cin.tie(nullptr);
+    ios::sync_with_stdio(false);    
+    
+	// Your code goes here
+	return 0;
+}

@@ -1,0 +1,73 @@
+#include <iostream>
+#include <iomanip>
+#include <fstream>
+#include <sstream>
+#include <string>
+#include <vector>
+#include <array>
+#include <list>
+#include <deque>
+#include <queue>
+#include <stack>
+#include <map>
+#include <unordered_map>
+#include <set>
+#include <unordered_set>
+#include <algorithm>
+#include <functional>
+#include <numeric>
+#include <cmath>
+#include <cstdlib>
+#include <ctime>
+#include <cassert>
+#include <climits>
+#include <cfloat>
+#include <cctype>
+#include <cstdio>
+#include <cstring>
+#include <bitset>
+#include <iterator>
+#include <utility>
+#include <typeinfo>
+#include <exception>
+#include <stdexcept>
+#include <memory>
+#include <random>
+#include <chrono>
+using namespace std;
+
+// Problem link: https://cses.fi/problemset/task/1709
+// Time limit: 1.00 s
+// Memory limit: 512 MB
+// 
+// There is an n x n grid whose each square is empty or has a coin. On each move, you can remove all coins in a row or column.
+// What is the minimum number of moves after which the grid is empty?
+// Input
+// The first input line has an integer n: the size of the grid. The rows and columns are numbered 1,2,...,n.
+// After this, there are n lines describing the grid. Each line has n characters: each character is either . (empty) or o (coin).
+// Output
+// First print an integer k: the minimum number of moves. After this, print k lines describing the moves.
+// On each line, first print 1 (row) or 2 (column), and then the number of a row or column. You can print any valid solution.
+// Constraints
+// 
+// 1 <= n <= 100
+// 
+// Example
+// Input:
+// 3
+// ..o
+// o.o
+// ...
+// 
+// Output:
+// 2
+// 1 2
+// 2 3
+
+int main() {
+    cin.tie(nullptr);
+    ios::sync_with_stdio(false);    
+    
+	// Your code goes here
+	return 0;
+}
