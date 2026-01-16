@@ -56,10 +56,56 @@ using namespace std;
 // Output:
 // AACABACAA
 
+void func1()
+{
+    string str;
+    cin>>str;
+    map<char,int>mp;
+    for(int i=0;i<str.size();i++)
+    {
+        mp[str[i]]++;
+    }
+    int odd_count=0;
+    char odd_char;
+    for(auto &p :mp)
+    {
+        if(p.second&1) //odd
+        {
+            odd_count++;
+            if(odd_count==1)
+            {
+                odd_char=p.first;
+            }
+        }
+    }
+    if(odd_count>1)
+    {
+        cout<<"NO SOLUTION"<<endl;
+        return;
+    }
+    string partA="";
+    for(auto & p: mp)
+    {
+        if(p.second>0)
+        {
+            partA+=string(p.second/2,p.first);
+        }
+    }
+    string partB=partA;
+    reverse(partB.begin(),partB.end());
+    if(odd_count==1)
+    {
+        cout<<partA<<odd_char<<partB;
+    }
+    else
+    {
+        cout<<partA<<partB;
+    }
+}
 int main() {
     cin.tie(nullptr);
     ios::sync_with_stdio(false);    
-    
+    func1();
 	// Your code goes here
 	return 0;
 }

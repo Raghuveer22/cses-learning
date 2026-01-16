@@ -57,10 +57,40 @@ using namespace std;
 // Output:
 // 8
 
+
+
+void func2()
+{
+    int n;
+    cin>>n;
+    long long res=1;
+    long long MOD=1000000007;
+    for(int i=0;i<n;i++)
+    {
+        res=(res*2)%MOD;
+    }     
+    cout<<res<<endl;
+}
+
+void func1()
+{
+    int n;
+    cin>>n;
+    long long res=1;
+    long long MOD=1000000007;
+    for(int i=0;i<n;i++)
+    {
+        res=res*2;
+    }     
+
+    cout<<res%MOD<<endl;
+}
+
 int main() {
     cin.tie(nullptr);
     ios::sync_with_stdio(false);    
-    
+   // func1();
+    func2();
 	// Your code goes here
 	return 0;
 }

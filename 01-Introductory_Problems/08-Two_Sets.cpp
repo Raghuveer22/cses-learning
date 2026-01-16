@@ -67,10 +67,64 @@ using namespace std;
 // Output:
 // NO
 
+void func1()
+{
+
+    int n; 
+    cin>>n;
+    if((n%4==1)||(n%4==2))
+    {
+        cout<<"NO"<<endl;
+    }
+    else
+    {
+        cout<<"YES"<<endl;
+        cout<<n/2<<endl;
+        int t=n;
+        cout<<t;
+        int i=0;
+
+        while(t>3)
+        {
+            if(i%2==0)
+            {
+                t-=3;
+            }else
+            {
+                t-=1;
+            }
+            cout<<" "<<t;
+            i++;
+        }
+
+        cout<<endl;
+        cout<<(n+1)/2<<endl;
+        
+        i=0;
+        t=n-1;
+        cout<<t;
+        while(t>1)
+        {
+            if(i%2==0)
+            {
+                t-=1;
+            }
+            else
+            {
+                t-=3;
+            }
+            if(t<0)break;
+            cout<<" "<<t;
+            i++;
+        }       
+        cout<<endl;
+    }
+}
+
 int main() {
     cin.tie(nullptr);
     ios::sync_with_stdio(false);    
-    
+    func1();    
 	// Your code goes here
 	return 0;
 }

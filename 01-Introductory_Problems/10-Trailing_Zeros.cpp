@@ -57,10 +57,24 @@ using namespace std;
 // Output:
 // 4
 
+void func1()
+{
+    long long n;
+    cin>>n;
+    long long res=0;
+    long long mul=5;
+    while(true)
+    {
+        long long t= n/mul;
+        if(t==0)break;
+        res+=t;
+        mul*=5;
+    }
+    cout<<res;
+}
 int main() {
     cin.tie(nullptr);
     ios::sync_with_stdio(false);    
-    
-	// Your code goes here
+    func1();
 	return 0;
 }

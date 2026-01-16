@@ -164,7 +164,7 @@ void func2()
                 not_pos+=2*max(0,t-1); 
             }
         }
-        long long not_pos_1= not_pos/2;
+        long long not_pos_1= not_pos/2; //divides for as repetition
         cout<<pos-not_pos_1<<endl;
     }
 }
@@ -179,10 +179,8 @@ void func3()
     {
         long long sq = t*t*1LL;
         long long pos = (sq*(sq-1))/2;  // number of possible positions
-        long long not_pos=0; 
-        not_pos= 8*max(0,t-2)*(max(0,t-1));
-        long long not_pos_1= not_pos/2;
-        cout<<pos-not_pos_1<<endl;
+        long long not_pos=4*max(0,t-2)*(max(0,t-1)); 
+        cout<<pos-not_pos<<endl;
     }
 }
 

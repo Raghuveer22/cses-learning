@@ -64,10 +64,33 @@ using namespace std;
 // NO
 // YES
 
+void func1()
+{
+    int n;
+    cin>>n;
+    for(int i=0;i<n;i++)
+    {
+        long long a;
+        long long b;
+        cin>>a>>b;        
+        // coin pile A 2*x+y
+        // coin pile B 2*y+x
+        // if y>x then min_ele=2*x+y max_ele=2*y+x.  
+        if((a+b)%3==0 && 2*min(a,b)>=max(a,b)) // 4x+2y>=2y+x => 3x>=0
+        {
+            cout<<"YES"<<endl;
+        }
+        else
+        {
+            cout<<"NO"<<endl;
+        }
+    }
+}
+
 int main() {
     cin.tie(nullptr);
     ios::sync_with_stdio(false);    
-    
+    func1();
 	// Your code goes here
 	return 0;
 }
