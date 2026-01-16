@@ -58,10 +58,73 @@ using namespace std;
 // Output:
 // 4
 
+// time: nlog(n) space (n) 
+void func1()
+{
+    int n;
+    cin>>n;
+    int arrlen=n-1;
+    int arr[arrlen];
+    for (int i=0;i<n-1;i++)
+    {
+        cin>>arr[i];
+    }
+    sort(arr,arr+arrlen);
+    for(int i=0;i<arrlen;i++)
+    {
+       if(arr[i]!=(i+1))
+       {
+         cout << (i+1);
+         return ;
+       }
+    }
+    cout<<n;
+}
+
+// time: n space: n 
+void func2()
+{
+    int n; 
+    cin>>n; 
+    vector<int> arr(n, 0);
+    for(int i=0;i<(n-1);i++)
+    {
+        int t;
+        cin>>t;
+        arr[(t-1)]=1;
+    }
+    for(int i=0;i<n;i++)
+    {
+        if(arr[i]==0)
+        {
+            cout<<(i+1);
+            return;
+        }
+    }
+}
+// space : 1 time n
+void func3()
+{
+    int n; 
+    cin>>n;
+    int xor_val=0;
+    // 1 to n-1
+    // 
+    for(int i=0;i<(n-1);i++)
+    {
+        int t;
+        cin>>t;
+        xor_val=xor_val^t;
+        xor_val=xor_val^(i+1);
+    }
+    xor_val=xor_val^(n);
+    cout<<xor_val;
+}
 int main() {
     cin.tie(nullptr);
     ios::sync_with_stdio(false);    
-    
-	// Your code goes here
+    // func1();
+    //func2();
+    func3();
 	return 0;
 }

@@ -56,10 +56,80 @@ using namespace std;
 // Output:
 // 3
 
+
+void func1(){
+   string str;
+   cin >> str;
+   int n=str.size();
+
+   int a=0;
+   int g=0;
+   int c=0;
+   int t=0;
+   int max_val=0;
+  for(int i=0;i<n;i++)
+  {
+        if(str[i]=='A')
+        {
+            a++;
+            g=0;
+            c=0;
+            t=0;
+        }
+        else if(str[i]=='G')
+        {
+            g++;
+            a=0;
+            c=0;
+            t=0;
+        }
+        else if(str[i]=='T')
+        {
+            c++;
+            a=0;
+            g=0;
+            t=0;
+        }
+        else
+        {
+            a=0;
+            g=0;
+            c=0;
+            t++;
+        }
+        max_val=max(max_val,max(a,max(g,max(c,t))));
+   }
+   cout<<max_val;
+}
+
+void func2()
+{
+    string str;
+    cin>>str;
+    int n=str.size();
+    char curr_char=str[0];
+    int curr_count=1;
+    int max_count=1;
+    for(int i=1;i<n;i++)
+    { 
+        if(str[i]==curr_char)
+        {
+            curr_count++;
+            max_count=max(max_count,curr_count);
+        }
+        else
+        {
+            curr_char=str[i];
+            curr_count=1;
+        }
+    }
+    cout<<max_count;
+}
+
 int main() {
     cin.tie(nullptr);
     ios::sync_with_stdio(false);    
-    
-	// Your code goes here
+    //func1();
+	func2();
 	return 0;
 }

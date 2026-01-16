@@ -65,10 +65,46 @@ using namespace std;
 // 1
 // 15
 
+
+void func1()
+{
+  int t;
+  cin>>t;
+  for(int i=0;i<t;i++)
+  {
+    long long x;
+    long long y;
+    cin>>y>>x;
+    long long m=max(x,y);
+
+    if(m&1) //odd
+    {
+        if(x>y)
+        {
+            cout<<(m*m)*1LL-y+1<<endl;
+        }
+        else
+        {
+            cout<<((m-1)*(m-1))*1LL+x<<endl;
+        }
+    }
+    else
+    {
+        if(y>x)
+        {
+            cout<<(m*m)*1LL-x+1<<endl;
+        }
+        else
+        {
+            cout<<((m-1)*(m-1))*1LL+y<<endl;
+        }
+    }
+  }
+}
 int main() {
     cin.tie(nullptr);
     ios::sync_with_stdio(false);    
-    
+    func1();
 	// Your code goes here
 	return 0;
 }

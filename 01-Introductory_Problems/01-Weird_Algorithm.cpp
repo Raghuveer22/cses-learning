@@ -34,6 +34,7 @@
 #include <memory>
 #include <random>
 #include <chrono>
+
 using namespace std;
 
 // Problem link: https://cses.fi/problemset/task/1068
@@ -59,37 +60,49 @@ using namespace std;
 // 3 10 5 16 8 4 2 1
 
 
-void func1()
-{
-	long long n;
-	cin >>n;
-	while(n!=1)
-	{
-		cout<<n;
-		if(n%2==0)
-		{
 
-		}else
-		{
-
-		}
-	}
-}
 void func2()
 {
 	long long n;
 	cin>>n;
 	while(n!=1)
 	{
-
+		cout<<n<<" ";
+		if(n&1)
+		{
+			n=(n<<2)-(n)+1;
+		}
+		else
+		{
+			n=n>>1;
+		}
 	}
+	cout<<1;
+}
+
+void func1()
+{
+	long long n;
+	cin >>n;
+	while(n!=1)
+	{
+		cout<<n<<" ";
+		if(n%2==0)
+		{
+			n=n/2;	
+		}else
+		{
+			n=n*3+1;
+		}
+	}
+	cout<<1;
 }
 
 int main() {
     cin.tie(nullptr);
     ios::sync_with_stdio(false);    
     
-
-	// Your code goes here
+	//func1();
+	func2();
 	return 0;
 }

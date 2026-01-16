@@ -60,10 +60,55 @@ using namespace std;
 // Output:
 // 5
 
+// space n time n
+void func1()
+{ 
+   int n;
+   cin>>n;
+   long long arr[n];
+
+   long long min_moves=0;
+   long long cur_ele=arr[0];
+   
+   for(int i=1;i<n;i++)
+   { 
+      cin>>arr[i];
+      if(arr[i]<cur_ele)
+      {
+        min_moves+=cur_ele-arr[i];
+      }
+      else{
+        cur_ele=arr[i];
+      }
+   }
+   cout<< min_moves;
+}
+
+// space 1 time n
+void func2()
+{
+    int n;
+    cin>>n;
+    long long t;
+    cin>>t;
+    long long min_moves=0;
+    long long cur_ele= t;
+    for(int i=1;i<n;i++)
+    {
+        cin>>t;
+        if(t<cur_ele)
+        {
+          min_moves+=cur_ele-t;
+        }else
+        {
+          cur_ele=t;
+        }
+    }
+   cout<<min_moves;
+}
 int main() {
     cin.tie(nullptr);
     ios::sync_with_stdio(false);    
-    
-	// Your code goes here
+    func2();
 	return 0;
 }
