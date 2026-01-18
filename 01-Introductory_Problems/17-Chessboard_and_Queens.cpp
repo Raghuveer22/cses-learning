@@ -48,22 +48,85 @@ using namespace std;
 // Print one integer: the number of ways you can place the queens.
 // Example
 // Input:
-// ........
-// ........
-// ..*.....
-// ........
-// ........
+// A.......
+// ..A.....
+// ..*.A...
+// ......A.
+// .A......
 // .....**.
 // ...*....
 // ........
 // 
 // Output:
 // 65
+// please use 2 seperate arrays as they consider 2 different diagonals 
+// there are 3 arrays states which we need to consider
 
+int recfunc1(int x, vector<int>&pres,vector<int>&diag1,vector<int>&diag2,vector<string>&arr) 
+{
+    if(x==8)
+    {
+        int sum=0;
+
+        for(auto p:pres)
+        {
+            sum+=p;
+        }
+        if(sum==8)
+        {
+            return 1*1LL;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+
+    long long total_ways=0;
+
+    for(int y=0;y<8;y++)
+    {
+        // shouldn't be placed
+        if(pres[y] || arr[x][y]=='*')
+        {
+            continue;
+        }
+        if(diag1[x+y])
+        {
+            continue;
+        }
+        if(diag2[x-y+8])
+        {
+            continue;
+        }
+        pres[y]=1;  
+        diag1[x+y]=1;
+        diag2[x-y+8]=1;
+        long long ways = recfunc1(x+1,pres,diag1,diag2,arr);
+        pres[y]=0;
+        diag1[x+y]=0;
+        diag2[x-y+8]=0;
+        total_ways+=ways;
+    }
+    return total_ways;
+}
+void func1()
+{
+    vector<string>arr(8,"");
+    for(int i=0;i<8;i++)
+    {
+        cin>>arr[i];
+    }
+    vector<int>pres(8,0);
+    vector<int>diag1(16,0);
+    vector<int>diag2(16,0);
+    long long ways=recfunc1(0,pres,diag1,diag2,arr);
+    cout<<ways;
+}
 int main() {
     cin.tie(nullptr);
     ios::sync_with_stdio(false);    
-    
+    func1();
 	// Your code goes here
 	return 0;
 }

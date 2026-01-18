@@ -76,10 +76,78 @@ using namespace std;
 // cabaa
 // cbaaa
 
+
+// time complexity n! space complexity n!
+// algorithm using set 
+// please go through this https://www.geeksforgeeks.org/dsa/write-a-c-program-to-print-all-permutations-of-a-given-string/
+
+void recfunc1(int idx,string str,set<string>&ans)
+{   
+    if(str.size()==idx)
+    {
+        ans.insert(str);
+        return;
+    }
+    for(int i=idx;i<str.size();i++)
+    {
+        swap(str[idx],str[i]);
+        recfunc1(idx+1,str,ans);
+        swap(str[idx],str[i]);
+    }
+}
+
+void func1()
+{
+    string str;
+    cin>>str;
+    set<string>ans;
+    recfunc1(0,str,ans);
+    cout<<ans.size()<<endl;
+    for(auto&p:ans)
+    {
+        cout<<p<<endl;
+    }
+}
+
+// algorithm using vector 
+void recfunc2(int idx, string&str,vector<string>&ans)
+{
+    if(idx==str.size())
+    {
+        ans.push_back(str);
+        return;
+    }  
+    set<char>st;
+    for(int i=idx;i<str.size();i++)
+    {
+        if(st.count(str[i]))
+        continue;
+        st.insert(str[i]);
+        swap(str[idx],str[i]);
+        recfunc2(idx+1,str,ans);
+        swap(str[idx],str[i]);
+    }
+}
+
+void func2()
+{
+    string str;
+    cin>>str;
+    vector<string>ans;
+    recfunc2(0,str,ans);
+    sort(ans.begin(),ans.end());
+    cout<<ans.size()<<endl;
+    for(auto &p:ans)
+    {
+        cout<<p<<endl;
+    }
+}
+
 int main() {
     cin.tie(nullptr);
     ios::sync_with_stdio(false);    
-    
+    //func1();
+    func2();
 	// Your code goes here
 	return 0;
 }

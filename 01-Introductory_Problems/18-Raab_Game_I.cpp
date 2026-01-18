@@ -75,11 +75,113 @@ using namespace std;
 // 1 2
 // 2 1
 // NO
+// this is a correct solution but not accepted
+// at any case there are each get a confirmed win 
 
+void func1()
+{
+    int t;
+    cin>>t;
+    for(int h=0;h<t;h++)
+    {
+        int n,a,b;
+        cin>>n>>a>>b;
+        if(a+b>n||(a==0 &&b!=0)|| (a!=0 && b==0))
+        {
+            cout<<"NO"<<endl;
+        }
+        else
+        {
+            cout<<"YES"<<endl;
+            int draws=n-a-b;
+            vector<int>team_a(n,0);
+            vector<int>team_b(n,0);
+
+            for(int i=0;i<draws;i++)
+            {
+                team_a[i]=i+1;
+                team_b[i]=i+1;
+            }
+
+            for(int i=0;i<(a-1);i++)
+            {
+                team_a[i+draws]=i+draws+2;
+                team_b[i+draws]=i+draws+1;
+            }
+
+            // 1 win for b any ways
+            team_a[draws+a-1]=draws+1;
+            team_b[draws+a-1]=draws+a;
+
+            // b-1 wins adding to team b 
+            for(int i=0;i<(b-1);i++)
+            {
+                team_a[draws+a+i]=i+a+draws+1;
+                team_b[draws+a+i]=i+a+draws+2;
+            }
+
+            // 1 win to a any ways
+            team_a[n-1]=n;
+            team_b[n-1]=draws+a+1;
+
+            for(auto i:team_a)
+            {
+                cout<<i<<" ";
+            }
+            cout<<endl;
+            for(auto i:team_b)
+            {
+                cout<<i<<" ";
+            }
+            cout<<endl;
+        }
+    }
+}
+
+void func2()
+{
+    int t;
+    cin>>t;
+    for(int h=0;h<t;h++)
+    {
+        int n,a,b;
+        cin>>n>>a>>b;
+        if(a+b>n||(a==0 &&b!=0)|| (a!=0 && b==0))
+        {
+            cout<<"NO"<<endl;
+        }
+        else
+        {
+            cout<<"YES"<<endl;
+            int off_set=n-a-b;
+            for(int i=0;i<n;i++)
+            {
+                cout<<i+1<<" ";
+            }
+            cout<<endl;
+            // tie in these cases
+            for(int i=0;i<off_set;i++)
+            {
+                cout<<i+1<<" ";
+            }
+            // b will all these cases upto b times
+            for(int i=off_set+a;i<n;i++)
+            {
+                cout<<i+1<<" ";
+            }
+            for(int i=off_set;i<off_set+a;i++)
+            {
+                cout<<i+1<<" ";
+            }
+            cout<<endl;
+        }
+    }
+}
 int main() {
     cin.tie(nullptr);
     ios::sync_with_stdio(false);    
-    
+    //func1();
+    func2();
 	// Your code goes here
 	return 0;
 }

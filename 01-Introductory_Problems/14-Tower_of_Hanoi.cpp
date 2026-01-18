@@ -62,10 +62,36 @@ using namespace std;
 // 1 3
 // 2 3
 
+// please play the game again so you understand the logic https://www.mathsisfun.com/games/towerofhanoi.html
+vector<pair<int,int>>  recfunc1(int n, int start,int dest,int mid)
+{
+    if(n==1)
+    {
+        return {{start,dest}};
+    }
+
+    vector<pair<int,int>> a = recfunc1(n-1,start,mid,dest);
+    a.push_back({start,dest});
+    vector<pair<int,int>> b = recfunc1(n-1,mid,dest,start);
+    a.insert(a.end(),b.begin(),b.end());
+    return a;
+}
+
+void func1()
+{
+   int a;
+   cin>>a;
+   vector<pair<int,int>> steps= recfunc1(a,1,3,2);
+   cout<<steps.size()<<endl;
+   for(auto&p:steps){
+    cout<<p.first<<" "<<p.second<<endl;
+   }
+}
+
 int main() {
     cin.tie(nullptr);
     ios::sync_with_stdio(false);    
-    
+    func1();
 	// Your code goes here
 	return 0;
 }
