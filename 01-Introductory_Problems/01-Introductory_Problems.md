@@ -24,3 +24,6 @@
 22. [Digit Queries](https://cses.fi/problemset/task/2431)
 23. [String Reorder](https://cses.fi/problemset/task/1743)
 24. [Grid Path Description](https://cses.fi/problemset/task/1625)
+
+Pending Question
+24

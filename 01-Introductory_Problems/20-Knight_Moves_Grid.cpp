@@ -63,10 +63,48 @@ using namespace std;
 // 4 3 4 3 4 5 4 5 
 // 5 4 5 4 5 4 5 6
 
+void func1()
+{
+    int n;
+    cin>>n;
+    vector<vector<int>>ans(n,vector<int>(n,-1));
+    
+    queue<pair<pair<int,int>,int>>q; 
+
+    vector<pair<int,int>>dir={{1,2},{1,-2},{-1,2},{-1,-2},{2,1},{2,-1},{-2,1},{-2,-1}};
+    ans[0][0]=0;
+    q.push({{0,0},0});
+
+    while(!q.empty())
+    {
+        auto tope = q.front().first;
+        auto lev = q.front().second;
+        for(auto nex:dir)
+        {
+            int x= tope.first+nex.first;
+            int y= tope.second+nex.second; 
+            if( x>=0 && x<n && y>=0 && y<n && ans[x][y]==-1)
+            {
+                // valid points
+                ans[x][y]=lev+1;
+                q.push({{x,y},lev+1});
+            }           
+        } 
+        q.pop();
+    } 
+    for(int i=0;i<n;i++)
+    {
+        for(int j=0;j<n;j++)
+        {
+            cout<<ans[i][j]<<" ";
+        }
+        cout<<"\n";
+    }
+}
 int main() {
     cin.tie(nullptr);
     ios::sync_with_stdio(false);    
-    
+    func1();
 	// Your code goes here
 	return 0;
 }

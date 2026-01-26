@@ -66,10 +66,124 @@ using namespace std;
 // DCDC
 // ABAB
 
+// this is a greedy approach to solve the problem 
+// not an absolute solution we assume this local optimal to be global optimal 
+// we fill row by row and then col by col
+// so we never about chars in both about below and right to a grid
+// we are not allowed to fill the left, center, top chars 
+void func1()
+{
+    int m,n;
+    //mxn
+    cin>>m>>n;
+    vector<string>grid(m,"");
+    for(int i=0;i<m;i++)
+    {
+        cin>>grid[i];
+    }
+    bool poss=1;
+
+    for(int i=0;i<m;i++)
+    {
+        for(int j=0;j<n;j++)
+        {
+            vector<int>hash(4,1);
+            int center=grid[i][j]-65;
+            hash[center]=0;
+            if(i>0) 
+            {
+                int top=grid[i-1][j]-65;
+                hash[top]=0;
+            }
+            if(j>0)
+            {
+                int lef=grid[i][j-1]-65;
+                hash[lef]=0;
+            }
+
+            bool cell_pos=0;
+            for(int k=0;k<4;k++)
+            {
+                if (hash[k]==1)
+                {
+                    cell_pos=1;
+                    grid[i][j]='A'+k;
+                    break;
+                }
+            }
+            if(cell_pos==0)
+            {
+                poss=0;
+                break;
+            }
+        }
+    }
+
+    if(poss==0)
+    {
+        cout<<"IMPOSSIBLE"<<endl;
+    }
+    else
+    {
+        for(int i=0;i<m;i++)
+        {
+            cout<<grid[i]<<"\n";
+        }
+    }
+
+}
+
+// this solution for sake of passing the tests
+
+void func2()
+{
+    int m,n;
+    //mxn
+    cin>>m>>n;
+    vector<string>grid(m,"");
+    for(int i=0;i<m;i++)
+    {
+        cin>>grid[i];
+    }
+    for(int i=0;i<m;i++)
+    {
+        for(int j=0;j<n;j++)
+        {
+            if((i+j)%2==0)
+            {
+                if(grid[i][j]=='A')
+                {
+                    grid[i][j]='B';
+                }
+                else
+                {
+                    grid[i][j]='A';
+                }
+            }
+            else
+            {
+                if(grid[i][j]=='C')
+                {
+                    grid[i][j]='D';
+                }
+                else
+                {
+                    grid[i][j]='C';
+                }
+            }
+        }
+    }
+    for(int i=0;i<m;i++)
+    {
+        cout<<grid[i]<<"\n";
+    }
+}
+
 int main() {
     cin.tie(nullptr);
     ios::sync_with_stdio(false);    
-    
+    func1();
+    //func2();
 	// Your code goes here
 	return 0;
 }

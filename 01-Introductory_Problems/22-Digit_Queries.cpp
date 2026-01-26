@@ -64,11 +64,51 @@ using namespace std;
 // 7
 // 4
 // 1
+/*
+    first find the range for the k 
 
+    range        nums       digits    k 
+    1-9          9           1      [1-9]
+    10-99        90          2      [10-189]
+    100-999      900         3      [190-2899]
+    1000-9999    9000        4      [2900-38899]
+*/
+void func1()
+{
+    int q;
+    cin>>q;
+    for(int i=0;i<q;i++)
+    {
+        long long k;
+        cin>>k;
+        // implentation logic 
+        long long start = 1; 
+        long long count = 9;
+        long long digit = 1;
+
+        while(k> (start+count*digit -1))
+        {
+            // update to new values 
+            start+=count*digit;
+            count=count*10LL;
+            digit+=1;
+        }
+        
+        // caluclate the numbers offset
+        long long firstnum=pow(10,digit-1);
+        long long offset=(k-start)/digit;
+        long long finalnum=firstnum+offset;
+    
+        long long startidx=start+(offset*digit);
+        string finalnumstr=to_string(finalnum);
+        int val=k-startidx;
+        cout<<finalnumstr[val]<<endl;
+    }
+}
 int main() {
     cin.tie(nullptr);
     ios::sync_with_stdio(false);    
-    
+    func1();
 	// Your code goes here
 	return 0;
 }
